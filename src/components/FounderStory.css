@@ -1,0 +1,261 @@
+.founder-section {
+  background-color: #1A1A1A;
+  padding: 100px 20px;
+  color: #FFF8F0;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.founder-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.founder-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(212, 168, 83, 0.08) 0%, rgba(26, 26, 26, 0) 70%);
+  pointer-events: none;
+}
+
+.founder-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.founder-image-wrapper {
+  position: relative;
+  flex: 0 0 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.founder-image-placeholder {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2D2D2D, #1A1A1A);
+  border: 4px solid #D4A853;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.founder-initials {
+  font-family: 'Playfair Display', serif;
+  font-size: 6rem;
+  color: #D4A853;
+  opacity: 0.5;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.founder-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.founder-decorative-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 168, 83, 0.3);
+  z-index: 1;
+  transition: transform 10s linear infinite;
+}
+
+.founder-image-wrapper:hover .founder-decorative-ring {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.founder-content {
+  flex: 1;
+}
+
+.founder-header {
+  margin-bottom: 30px;
+  border-left: 4px solid #8B1A1A;
+  padding-left: 20px;
+}
+
+.founder-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #D4A853;
+  margin: 0 0 5px 0;
+  font-weight: 700;
+}
+
+.founder-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: #A0A0A0;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.founder-quote-box {
+  background: rgba(255, 248, 240, 0.03);
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 30px;
+  position: relative;
+  border: 1px solid rgba(212, 168, 83, 0.1);
+}
+
+.quote-icon {
+  color: #D4A853;
+  font-size: 1.5rem;
+  opacity: 0.5;
+  position: absolute;
+}
+
+.quote-icon.left {
+  top: 20px;
+  left: 20px;
+}
+
+.quote-icon.right {
+  bottom: 20px;
+  right: 20px;
+}
+
+.founder-quote-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #FFF8F0;
+  font-style: italic;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+  padding: 0 30px;
+}
+
+.founder-story-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #CCCCCC;
+}
+
+.founder-story-text p {
+  margin: 0 0 15px 0;
+}
+
+.founder-story-text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 992px) {
+  .founder-container {
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+  }
+  
+  .founder-header {
+    border-left: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .founder-image-wrapper {
+    flex: 0 0 auto;
+  }
+  
+  .founder-header::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #8B1A1A;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .founder-section {
+    padding: 60px 15px;
+  }
+  
+  .founder-image-placeholder {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .founder-decorative-ring {
+    width: 270px;
+    height: 270px;
+  }
+  
+  .founder-name {
+    font-size: 2.2rem;
+  }
+  
+  .founder-quote-text {
+    font-size: 1.2rem;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .founder-image-placeholder {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .founder-decorative-ring {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .founder-initials {
+    font-size: 4rem;
+  }
+  
+  .founder-name {
+    font-size: 1.8rem;
+  }
+  
+  .founder-title {
+    font-size: 0.95rem;
+  }
+  
+  .founder-quote-text {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+  
+  .founder-story-text {
+    font-size: 0.95rem;
+  }
+  
+  .founder-quote-box {
+    padding: 20px 15px;
+  }
+}

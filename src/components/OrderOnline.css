@@ -1,0 +1,246 @@
+.order-online-section {
+  position: relative;
+  background-color: #1A1A1A;
+  background-image: radial-gradient(circle at top right, rgba(212, 168, 83, 0.1), transparent 50%),
+                    radial-gradient(circle at bottom left, rgba(139, 26, 26, 0.15), transparent 50%);
+  padding: 6rem 2rem;
+  color: #FFF8F0;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+/* Floating Decorative Elements */
+.floating-decor {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(212, 168, 83, 0.15), rgba(212, 168, 83, 0.05));
+  filter: blur(8px);
+  z-index: 0;
+  animation: float 15s infinite ease-in-out alternate;
+}
+
+.decor-1 {
+  width: 150px;
+  height: 150px;
+  top: 10%;
+  left: 5%;
+}
+
+.decor-2 {
+  width: 250px;
+  height: 250px;
+  bottom: 10%;
+  right: -5%;
+  animation-duration: 20s;
+  animation-direction: alternate-reverse;
+}
+
+.decor-3 {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 45%;
+  animation-duration: 12s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-30px) rotate(15deg); }
+}
+
+.order-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.order-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #D4A853;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.order-subtitle {
+  font-size: 1.2rem;
+  color: #E0E0E0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.delivery-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.delivery-card {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  background: rgba(45, 45, 45, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2.5rem;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(10px);
+}
+
+.card-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.zomato-card .card-bg-overlay {
+  background: linear-gradient(135deg, rgba(226, 55, 68, 0.1), rgba(226, 55, 68, 0.05));
+}
+
+.swiggy-card .card-bg-overlay {
+  background: linear-gradient(135deg, rgba(252, 128, 25, 0.1), rgba(252, 128, 25, 0.05));
+}
+
+.delivery-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.zomato-card:hover {
+  box-shadow: 0 15px 35px rgba(226, 55, 68, 0.2);
+}
+
+.swiggy-card:hover {
+  box-shadow: 0 15px 35px rgba(252, 128, 25, 0.2);
+}
+
+.delivery-card:hover .card-bg-overlay {
+  opacity: 1;
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.platform-logo {
+  font-size: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.zomato-card .platform-logo {
+  color: #E23744;
+}
+
+.swiggy-card .platform-logo {
+  color: #FC8019;
+}
+
+.delivery-card:hover .platform-logo {
+  transform: scale(1.1);
+}
+
+.platform-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+
+
+.external-icon {
+  font-size: 1.5rem;
+  color: #888;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.delivery-card:hover .external-icon {
+  color: #FFFFFF;
+  transform: translate(3px, -3px);
+}
+
+.redirect-note {
+  font-size: 0.9rem;
+  color: #888;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .delivery-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .order-title {
+    font-size: 2.8rem;
+  }
+  
+  .platform-text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .platform-logo {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .order-online-section {
+    padding: 4rem 1rem;
+  }
+  
+  .order-title {
+    font-size: 2.2rem;
+  }
+  
+  .order-subtitle {
+    font-size: 1rem;
+  }
+  
+  .delivery-card {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .platform-logo {
+    font-size: 2.5rem;
+  }
+  
+  .platform-text h3 {
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+  }
+  
+
+  .redirect-note {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,169 @@
+.branches-section {
+  background: linear-gradient(180deg, #1A1A1A, #2D2D2D);
+  padding: 6rem 2rem;
+  font-family: 'Inter', sans-serif;
+  color: #FFF8F0;
+}
+
+.branches-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.branches-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.branches-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #D4A853;
+  margin-bottom: 1rem;
+}
+
+.branches-subtitle {
+  font-size: 1.1rem;
+  color: #F5E6D3;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.branches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.branch-card {
+  background: rgba(255, 248, 240, 0.05);
+  backdrop-filter: blur(10px);
+  border-left: 4px solid #D4A853;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.branch-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(212, 168, 83, 0.2);
+}
+
+.branch-map-container {
+  height: 200px;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 248, 240, 0.1);
+}
+
+.branch-info {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.branch-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #D4A853;
+  margin-bottom: 1.5rem;
+}
+
+.branch-detail {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #F5E6D3;
+  line-height: 1.5;
+}
+
+.branch-icon {
+  color: #D4A853;
+  margin-right: 1rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.branch-link {
+  color: #F5E6D3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.branch-link:hover {
+  color: #D4A853;
+}
+
+.branch-directions-btn {
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #C69C3F, #D4A853);
+  color: #1A1A1A;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+}
+
+.branch-directions-btn:hover {
+  background: linear-gradient(135deg, #D4A853, #F5E6D3);
+  transform: scale(1.05);
+}
+
+.btn-icon {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .branches-title {
+    font-size: 2.5rem;
+  }
+  
+  .branch-info {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .branches-section {
+    padding: 4rem 1rem;
+  }
+  
+  .branches-title {
+    font-size: 2rem;
+  }
+  
+  .branches-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .branches-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .branch-name {
+    font-size: 1.4rem;
+  }
+  
+  .branch-map-container {
+    height: 170px;
+  }
+  
+  .branch-info {
+    padding: 1.25rem;
+  }
+  
+  .branch-directions-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+.food-quality {
+  position: relative;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+  color: #FFF8F0;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.food-quality__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vw;
+  max-width: 800px;
+  max-height: 800px;
+  background: radial-gradient(circle, rgba(212, 168, 83, 0.08) 0%, rgba(26, 26, 26, 0) 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Subtle decorative shapes */
+.food-quality::before,
+.food-quality::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-image: 
+    radial-gradient(rgba(212, 168, 83, 0.1) 2px, transparent 2px),
+    radial-gradient(rgba(212, 168, 83, 0.1) 2px, transparent 2px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.food-quality::before {
+  top: -100px;
+  left: -100px;
+  transform: rotate(15deg);
+}
+
+.food-quality::after {
+  bottom: -100px;
+  right: -100px;
+  transform: rotate(-15deg);
+}
+
+.food-quality__container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.food-quality__header {
+  text-align: center;
+  margin-bottom: 60px;
+  opacity: 0;
+}
+
+.food-quality__header.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.food-quality__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #D4A853;
+  margin-bottom: 20px;
+}
+
+.food-quality__subtitle {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: rgba(255, 248, 240, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.food-quality__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.food-quality__card {
+  background: rgba(255, 248, 240, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 168, 83, 0.1);
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.food-quality__card.slide-up {
+  animation: slideUp 0.8s ease forwards;
+}
+
+.food-quality__card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(212, 168, 83, 0.4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(212, 168, 83, 0.1);
+}
+
+.food-quality__card-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px dashed rgba(212, 168, 83, 0.5);
+  color: #D4A853;
+  font-size: 2rem;
+  transition: all 0.4s ease;
+}
+
+.food-quality__card:hover .food-quality__card-icon {
+  border-style: solid;
+  border-color: #D4A853;
+  background: rgba(212, 168, 83, 0.1);
+  transform: scale(1.05);
+}
+
+.food-quality__card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #FFF8F0;
+  margin-bottom: 16px;
+}
+
+.food-quality__card-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 248, 240, 0.7);
+  font-weight: 300;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .food-quality__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .food-quality__title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .food-quality {
+    padding: 80px 20px;
+  }
+  
+  .food-quality__grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .food-quality__title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .food-quality {
+    padding: 60px 15px;
+  }
+  
+  .food-quality__title {
+    font-size: 1.8rem;
+  }
+  
+  .food-quality__subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .food-quality__card {
+    padding: 30px 20px;
+  }
+  
+  .food-quality__card-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 1.6rem;
+  }
+  
+  .food-quality__card-title {
+    font-size: 1.25rem;
+  }
+  
+  .food-quality__card-description {
+    font-size: 0.9rem;
+  }
+}
