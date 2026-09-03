@@ -1,0 +1,243 @@
+.our-story-section {
+  background-color: #FFF8F0;
+  padding: 100px 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  overflow: hidden;
+  position: relative;
+}
+
+.our-story-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.our-story-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#D4A853 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.our-story-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.our-story-image-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.decorative-frame {
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, #F5E6D3, #FFF8F0);
+  border: 2px solid #D4A853;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(139, 26, 26, 0.05);
+}
+
+.decorative-frame::before,
+.decorative-frame::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #8B1A1A;
+}
+
+.decorative-frame::before {
+  top: -10px;
+  left: -10px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.decorative-frame::after {
+  bottom: -10px;
+  right: -10px;
+  border-left: none;
+  border-top: none;
+}
+
+.inner-frame {
+  width: 100%;
+  height: 100%;
+  border: 1px dashed #D4A853;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.story-logo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 2px solid #D4A853;
+  box-shadow: 0 10px 20px rgba(139, 26, 26, 0.1);
+}
+
+.frame-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #8B1A1A;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 0 20px;
+  line-height: 1.2;
+}
+
+.frame-ornament {
+  width: 60px;
+  height: 2px;
+  background-color: #D4A853;
+  margin-top: 20px;
+  position: relative;
+}
+
+.frame-ornament::before,
+.frame-ornament::after {
+  content: '✦';
+  position: absolute;
+  color: #D4A853;
+  font-size: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.frame-ornament::before {
+  left: -15px;
+}
+
+.frame-ornament::after {
+  right: -15px;
+}
+
+
+
+.our-story-text-side {
+  flex: 1;
+}
+
+.section-header {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: #1A1A1A;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+}
+
+.gold-divider {
+  width: 80px;
+  height: 3px;
+  background-color: #D4A853;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.section-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  color: #8B1A1A;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.story-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.story-paragraph {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4A4A4A;
+  margin: 0;
+}
+
+.story-paragraph:first-child::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  color: #D4A853;
+  float: left;
+  line-height: 1;
+  margin-right: 15px;
+  margin-top: 5px;
+}
+
+@media (max-width: 992px) {
+  .our-story-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .decorative-frame {
+    max-width: 400px;
+  }
+  
+  .section-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .our-story-section {
+    padding: 60px 15px;
+  }
+  
+  .section-title {
+    font-size: 2.3rem;
+  }
+
+  .frame-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .story-paragraph:first-child::first-letter {
+    font-size: 3rem;
+    margin-right: 10px;
+  }
+  
+  .story-paragraph {
+    font-size: 1rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+  }
+  
+  .decorative-frame {
+    max-width: 280px;
+  }
+}

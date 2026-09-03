@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap');
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #1A1A1A; /* Charcoal base */
+}
+
+/* Background Gradients and Patterns */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* Complex warm gradient representing a rich dining atmosphere */
+  background: 
+    radial-gradient(circle at 70% 30%, rgba(212, 168, 83, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 30% 80%, rgba(139, 26, 26, 0.2) 0%, transparent 60%),
+    linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 50%, #1A1A1A 100%);
+  background-attachment: fixed; /* Parallax-like effect */
+}
+
+.hero-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(26, 26, 26, 0.8) 0%, rgba(26, 26, 26, 0.4) 50%, rgba(26, 26, 26, 0.9) 100%);
+  z-index: 2;
+}
+
+.hero-pattern-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  /* CSS dot pattern */
+  background-image: radial-gradient(#FFF8F0 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: 3;
+}
+
+/* Floating Elements (Abstract representations of spices/ingredients) */
+.floating-element {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(8px);
+  z-index: 4;
+  opacity: 0.4;
+  animation: float 15s infinite ease-in-out alternate;
+}
+
+.float-1 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #8B1A1A, transparent 70%); /* Deep burgundy */
+  top: 15%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.float-2 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #D4A853, transparent 70%); /* Gold */
+  bottom: 10%;
+  right: 5%;
+  animation-duration: 20s;
+  animation-delay: -5s;
+}
+
+.float-3 {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #C69C3F, transparent 70%);
+  top: 40%;
+  right: 20%;
+  animation-duration: 12s;
+  animation-delay: -2s;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(30px, -50px) rotate(180deg);
+  }
+  100% {
+    transform: translate(-20px, 20px) rotate(360deg);
+  }
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 900px;
+  padding: 0 2rem;
+  color: #FFF8F0; /* Rich cream */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hero-content.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-tagline {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: #D4A853; /* Warm gold */
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 5.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hero-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #F5E6D3;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.hero-cta-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #D4A853, #C69C3F);
+  color: #1A1A1A;
+  box-shadow: 0 10px 20px rgba(212, 168, 83, 0.2);
+  border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(212, 168, 83, 0.4);
+  background: linear-gradient(135deg, #e0b460, #d1a646);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #FFF8F0;
+  border: 2px solid #D4A853;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  background: rgba(212, 168, 83, 0.1);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  border-color: #e0b460;
+  color: #e0b460;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+  .hero-tagline {
+    font-size: 2.2rem;
+  }
+  .hero-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-title {
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1.8rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-cta-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.9rem 2rem;
+  }
+  
+  .float-1, .float-2, .float-3 {
+    opacity: 0.2; /* Reduce intensity on mobile */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1.3rem;
+  }
+  
+  .hero-description {
+    font-size: 0.9rem;
+  }
+  
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.85rem;
+  }
+}
